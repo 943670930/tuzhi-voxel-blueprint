@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301e406fcbe8aa945a3dfd229e2555a7, type: 3}
+  m_Name: javelin_pouch_WeaponPartBoxCut
+  m_EditorClassIdentifier: 
+  source: {fileID: 11400000, guid: 192296b96dad25349acb4060534fd2b3, type: 2}
+  weaponItemId: javelin_pouch
+  partLabels:
+  - "枪袋"
+  boxes:
+  - label: "枪袋"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 8.5, y: 4.0, z: 21.5}
+    size: {x: 17, y: 8, z: 44}
+    euler: {x: 0, y: 0, z: 0}
+  rejected:
+  - label: "枪袋"
+    cells: []
+  claimed:
+  - label: "枪袋"
+    cells: []

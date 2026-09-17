@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301e406fcbe8aa945a3dfd229e2555a7, type: 3}
+  m_Name: OpenGameArtFantasySword01_VoxelV01_WeaponPartBoxCut
+  m_EditorClassIdentifier: 
+  source: {fileID: 11400000, guid: 43106fba56b783f4791ef7b0308e74ba, type: 2}
+  weaponItemId: giant_sword
+  partLabels:
+  - "\u5203"
+  - "\u67C4"
+  boxes:
+  - label: "\u5203"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 5, y: 34, z: 1.5}
+    size: {x: 16, y: 44, z: 11}
+    euler: {x: 0, y: 0, z: 0}
+  - label: "\u67C4"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 5, y: -10, z: 1.5}
+    size: {x: 16, y: 44, z: 11}
+    euler: {x: 0, y: 0, z: 0}
+  rejected:
+  - label: "\u5203"
+    cells: []
+  - label: "\u67C4"
+    cells: []
+  claimed:
+  - label: "\u5203"
+    cells: []
+  - label: "\u67C4"
+    cells: []

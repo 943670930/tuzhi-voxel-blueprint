@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301e406fcbe8aa945a3dfd229e2555a7, type: 3}
+  m_Name: Vr3IronSword_Sword4_VoxelV01_WeaponPartBoxCut
+  m_EditorClassIdentifier: 
+  source: {fileID: 11400000, guid: 832022437a041e44bb233974b230c442, type: 2}
+  weaponItemId: sword_iron
+  partLabels:
+  - "\u5203"
+  - "\u67C4"
+  boxes:
+  - label: "\u5203"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 3.5, y: 32.5, z: 1}
+    size: {x: 11, y: 39, z: 8}
+    euler: {x: 0, y: 0, z: 0}
+  - label: "\u67C4"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 3.5, y: -6.5, z: 1}
+    size: {x: 11, y: 39, z: 8}
+    euler: {x: 0, y: 0, z: 0}
+  rejected:
+  - label: "\u5203"
+    cells: []
+  - label: "\u67C4"
+    cells: []
+  claimed:
+  - label: "\u5203"
+    cells: []
+  - label: "\u67C4"
+    cells: []

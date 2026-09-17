@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40cda13d96d6429380f47076e8ff2b0c, type: 3}
+  m_Name: OpenGameArtFantasySword01_VoxelV01_PartBoxCut
+  m_EditorClassIdentifier: 
+  source: {fileID: 11400000, guid: 43106fba56b783f4791ef7b0308e74ba, type: 2}
+  boxes:
+  - label: Head
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Torso
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Hips
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: UpperArm_L
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Forearm_L
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Hand_L
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: UpperArm_R
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Forearm_R
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Hand_R
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: UpperLeg_L
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: LowerLeg_L
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Foot_L
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: UpperLeg_R
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: LowerLeg_R
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  - label: Foot_R
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0.5, y: 0.5, z: 0.5}
+    size: {x: 1, y: 1, z: 1}
+    euler: {x: 0, y: 0, z: 0}
+    mirror: 0
+  armMirror: 0
+  limbViewerLrSwapDone: 1
+  rejected:
+  - label: Head
+    cells: []
+  - label: Torso
+    cells: []
+  - label: Hips
+    cells: []
+  - label: UpperArm_L
+    cells: []
+  - label: Forearm_L
+    cells: []
+  - label: Hand_L
+    cells: []
+  - label: UpperArm_R
+    cells: []
+  - label: Forearm_R
+    cells: []
+  - label: Hand_R
+    cells: []
+  - label: UpperLeg_L
+    cells: []
+  - label: LowerLeg_L
+    cells: []
+  - label: Foot_L
+    cells: []
+  - label: UpperLeg_R
+    cells: []
+  - label: LowerLeg_R
+    cells: []
+  - label: Foot_R
+    cells: []
+  claimed:
+  - label: Head
+    cells: []
+  - label: Torso
+    cells: []
+  - label: Hips
+    cells: []
+  - label: UpperArm_L
+    cells: []
+  - label: Forearm_L
+    cells: []
+  - label: Hand_L
+    cells: []
+  - label: UpperArm_R
+    cells: []
+  - label: Forearm_R
+    cells: []
+  - label: Hand_R
+    cells: []
+  - label: UpperLeg_L
+    cells: []
+  - label: LowerLeg_L
+    cells: []
+  - label: Foot_L
+    cells: []
+  - label: UpperLeg_R
+    cells: []
+  - label: LowerLeg_R
+    cells: []
+  - label: Foot_R
+    cells: []

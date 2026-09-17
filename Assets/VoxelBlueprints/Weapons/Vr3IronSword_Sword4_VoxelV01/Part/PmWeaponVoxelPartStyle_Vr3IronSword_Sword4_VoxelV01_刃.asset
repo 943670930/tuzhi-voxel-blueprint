@@ -1,0 +1,619 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a00d18131e9354a944475a25bcdc49, type: 3}
+  m_Name: "PmWeaponVoxelPartStyle_Vr3IronSword_Sword4_VoxelV01_\u5203"
+  m_EditorClassIdentifier: 
+  sizeX: 4
+  sizeY: 30
+  sizeZ: 1
+  interiorMode: 0
+  cells:
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284047458
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4281475105
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4281212961
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4281410085
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283520345
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282993742
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388759
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283191892
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388759
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283191892
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388759
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257173
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388759
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257429
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283585882
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388501
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283191124
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283454296
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388755
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282993486
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388759
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388501
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283585882
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388501
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388759
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4289047988
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283191124
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283059530
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4286613385
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060562
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284705131
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060562
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060050
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283058765
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060050
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060050
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282862413
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282665804
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283520089
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282731084
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283520089
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283126097
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283520089
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282993486
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282796363
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060050
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282993486
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4287272346
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060050
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282993486
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4281809728
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284705131
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060050
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4281216561
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283060048
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283058506
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4286087301
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283058764
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283388503
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283191637
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283586906
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283586138
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282993486
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4282993486
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284112226
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283981152
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283059279
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284310117
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284375398
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284507496
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283849566
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284506728
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284507496
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4283257172
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284507496
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4286548110
+    value: 4
+  - enabled: 1
+    color:
+      serializedVersion: 2
+      rgba: 4284441704
+    value: 4
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0
+  - enabled: 0
+    color:
+      serializedVersion: 2
+      rgba: 0
+    value: 0

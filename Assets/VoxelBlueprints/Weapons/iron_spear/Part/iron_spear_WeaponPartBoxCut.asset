@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301e406fcbe8aa945a3dfd229e2555a7, type: 3}
+  m_Name: iron_spear_WeaponPartBoxCut
+  m_EditorClassIdentifier: 
+  source: {fileID: 11400000, guid: b2ba533381beeca419c186488354f73b, type: 2}
+  weaponItemId: iron_spear
+  partLabels:
+  - "刃"
+  - "柄"
+  boxes:
+  - label: "刃"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 1.5, y: 33.5, z: 2.0}
+    size: {x: 3, y: 44, z: 4}
+    euler: {x: 0, y: 0, z: 0}
+  - label: "柄"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 1.5, y: -11.5, z: 2.0}
+    size: {x: 3, y: 44, z: 4}
+    euler: {x: 0, y: 0, z: 0}
+  rejected:
+  - label: "刃"
+    cells: []
+  - label: "柄"
+    cells: []
+  claimed:
+  - label: "刃"
+    cells: []
+  - label: "柄"
+    cells: []

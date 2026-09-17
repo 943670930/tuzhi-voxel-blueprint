@@ -1,0 +1,5 @@
+numpy
+trimesh
+sparse-cubes
+
+# Optional: Instant Meshes binary is vendored under Tools/instant-meshes/ (not pip).

@@ -1,0 +1,1 @@
+Static PM Unit snapshot exported from VR3. Drag PmUnitStaticMannequin.prefab into a TuZhi scene. It contains only frozen visible renderers and copied visual dependencies; no gameplay or animation scripts.

@@ -1,0 +1,46 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+MemoryCaptures/
+*.log
+*.tmp
+sysinfo.txt
+CrashReports/
+
+# IDE
+.vs/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local AI / Cursor
+.cursor/
+
+# Python
+__pycache__/
+*.pyc
+
+# Third-party binaries / unverified redistribution
+Tools/instant-meshes/
+Tools/_blender/
+
+# Paid or unverified third-party art (do not publish)
+Assets/3DModel/*aigei*
+Assets/3DModel/*Aigei*
+Assets/TryOnMannequin/Dependencies/PicaVoxel/
+Assets/TryOnMannequin/Dependencies/PicaVoxel.meta
+Assets/VoxelBlueprints/**/Aigei*
+Assets/VoxelBlueprints/**/AIGenerated*

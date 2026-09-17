@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>巨剑 Low-Poly 预览</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #12151a;
+      --panel: #1b2028;
+      --text: #e8edf5;
+      --muted: #9aa7bd;
+      --accent: #5ea0ff;
+      --border: #2a3342;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+    aside {
+      background: var(--panel);
+      border-right: 1px solid var(--border);
+      padding: 20px;
+      overflow: auto;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    p.hint {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    label {
+      display: block;
+      margin: 16px 0 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .value {
+      float: right;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+    input[type="range"] {
+      width: 100%;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    button {
+      background: var(--accent);
+      color: #081018;
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button.secondary {
+      background: #2a3342;
+      color: var(--text);
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: wait;
+    }
+    .stats {
+      margin-top: 20px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .stats strong { color: var(--text); }
+    .error {
+      color: #ff7b7b;
+      margin-top: 12px;
+      font-size: 13px;
+      white-space: pre-wrap;
+    }
+    #viewport {
+      position: relative;
+      min-height: 0;
+    }
+    canvas { display: block; width: 100%; height: 100%; }
+    #overlay {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      padding: 8px 12px;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      pointer-events: none;
+    }
+    .loading {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(8, 10, 14, 0.55);
+      font-size: 14px;
+    }
+    .loading.show { display: flex; }
+    input[type="checkbox"] { transform: translateY(1px); }
+  </style>
+</head>
+<body>
+  <aside>
+    <h1>巨剑 Low-Poly 预览</h1>
+    <p class="hint">拖动滑条调整 Instant Meshes 目标面数，松手后自动重算并在右侧刷新模型。Block 体素网格会缓存，一般 1–2 秒出结果。</p>
+
+    <label>
+      目标面数 (IM -f)
+      <span class="value" id="facesValue">500</span>
+    </label>
+    <input id="faces" type="range" min="80" max="2500" step="20" value="500" />
+
+    <label>
+      折痕角 (IM -c)
+      <span class="value" id="creaseValue">35°</span>
+    </label>
+    <input id="crease" type="range" min="10" max="80" step="1" value="35" />
+
+    <div class="row">
+      <input id="pureQuad" type="checkbox" />
+      <label for="pureQuad" style="margin:0;color:var(--text)">Pure quad（面数更多）</label>
+    </div>
+
+    <div class="row" style="margin-top:18px">
+      <button id="regen">立即生成</button>
+      <button id="wireframe" class="secondary" type="button">线框</button>
+    </div>
+
+    <div class="stats" id="stats">等待生成...</div>
+    <div class="error" id="error"></div>
+  </aside>
+
+  <div id="viewport">
+    <div class="loading" id="loading">生成中...</div>
+    <div id="overlay">左键旋转 · 右键平移 · 滚轮缩放</div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module">
+    import * as THREE from "three";
+    import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+    import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+    const faces = document.getElementById("faces");
+    const crease = document.getElementById("crease");
+    const pureQuad = document.getElementById("pureQuad");
+    const facesValue = document.getElementById("facesValue");
+    const creaseValue = document.getElementById("creaseValue");
+    const statsEl = document.getElementById("stats");
+    const errorEl = document.getElementById("error");
+    const loadingEl = document.getElementById("loading");
+    const regenBtn = document.getElementById("regen");
+    const wireBtn = document.getElementById("wireframe");
+    const viewport = document.getElementById("viewport");
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x12151a);
+
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.001, 100);
+    camera.position.set(0.35, 0.05, 0.9);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    viewport.appendChild(renderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+    const key = new THREE.DirectionalLight(0xffffff, 1.1);
+    key.position.set(1, 2, 1.5);
+    scene.add(key);
+    const fill = new THREE.DirectionalLight(0x9ab4ff, 0.35);
+    fill.position.set(-1.5, 0.5, -1);
+    scene.add(fill);
+
+    const grid = new THREE.GridHelper(2, 20, 0x334155, 0x1f2937);
+    grid.position.y = -0.52;
+    scene.add(grid);
+
+    let currentRoot = null;
+    let wireframeOn = false;
+    let debounceTimer = null;
+    let busy = false;
+
+    function resize() {
+      const w = viewport.clientWidth;
+      const h = viewport.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h, false);
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    function frameToObject(object) {
+      const box = new THREE.Box3().setFromObject(object);
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z);
+      const dist = maxDim / (2 * Math.tan((camera.fov * Math.PI) / 360)) * 1.35;
+      camera.position.set(center.x + dist * 0.35, center.y + dist * 0.05, center.z + dist);
+      controls.target.copy(center);
+      controls.update();
+    }
+
+    function applyWireframe(root, enabled) {
+      root.traverse((node) => {
+        if (node.isMesh && node.material) {
+          const mats = Array.isArray(node.material) ? node.material : [node.material];
+          mats.forEach((m) => { m.wireframe = enabled; });
+        }
+      });
+    }
+
+    async function loadMesh(meshUrl) {
+      const loader = new GLTFLoader();
+      const gltf = await loader.loadAsync(meshUrl);
+      if (currentRoot) {
+        scene.remove(currentRoot);
+        currentRoot.traverse((node) => {
+          if (node.geometry) node.geometry.dispose();
+          if (node.material) {
+            const mats = Array.isArray(node.material) ? node.material : [node.material];
+            mats.forEach((m) => m.dispose());
+          }
+        });
+      }
+      currentRoot = gltf.scene;
+      scene.add(currentRoot);
+      applyWireframe(currentRoot, wireframeOn);
+      frameToObject(currentRoot);
+    }
+
+    function setBusy(on) {
+      busy = on;
+      loadingEl.classList.toggle("show", on);
+      regenBtn.disabled = on;
+      faces.disabled = on;
+      crease.disabled = on;
+      pureQuad.disabled = on;
+    }
+
+    function updateLabels() {
+      facesValue.textContent = String(faces.value);
+      creaseValue.textContent = `${crease.value}°`;
+    }
+
+    function renderStats(stats) {
+      statsEl.innerHTML = [
+        `<div><strong>实际三角面</strong> ${stats.faces}</div>`,
+        `<div><strong>顶点</strong> ${stats.vertices}</div>`,
+        `<div><strong>IM 目标面数</strong> ${stats.target_faces}</div>`,
+        `<div><strong>Block 参考</strong> ${stats.block_faces} tris</div>`,
+        `<div><strong>耗时</strong> ${stats.ms} ms</div>`,
+      ].join("");
+    }
+
+    async function generateNow() {
+      if (busy) return;
+      setBusy(true);
+      errorEl.textContent = "";
+      updateLabels();
+      try {
+        const res = await fetch("/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            target_faces: Number(faces.value),
+            crease_angle: Number(crease.value),
+            pure_quad: pureQuad.checked,
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) {
+          throw new Error(data.error || `HTTP ${res.status}`);
+        }
+        renderStats(data.stats);
+        await loadMesh(data.mesh_url);
+      } catch (err) {
+        errorEl.textContent = String(err.message || err);
+      } finally {
+        setBusy(false);
+      }
+    }
+
+    function scheduleGenerate() {
+      updateLabels();
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(generateNow, 450);
+    }
+
+    faces.addEventListener("input", scheduleGenerate);
+    crease.addEventListener("input", scheduleGenerate);
+    pureQuad.addEventListener("change", generateNow);
+    regenBtn.addEventListener("click", generateNow);
+    wireBtn.addEventListener("click", () => {
+      wireframeOn = !wireframeOn;
+      wireBtn.textContent = wireframeOn ? "实体" : "线框";
+      if (currentRoot) applyWireframe(currentRoot, wireframeOn);
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    fetch("/api/status")
+      .then((r) => r.json())
+      .then(async (data) => {
+        if (data.stats && Object.keys(data.stats).length) {
+          renderStats(data.stats);
+        }
+        if (data.has_mesh) {
+          await loadMesh(`/api/preview.glb?rev=${data.revision}`);
+        } else {
+          await generateNow();
+        }
+      })
+      .catch(() => generateNow());
+  </script>
+</body>
+</html>

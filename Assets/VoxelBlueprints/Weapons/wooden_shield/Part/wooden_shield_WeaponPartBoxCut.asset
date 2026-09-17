@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301e406fcbe8aa945a3dfd229e2555a7, type: 3}
+  m_Name: wooden_shield_WeaponPartBoxCut
+  m_EditorClassIdentifier: 
+  source: {fileID: 11400000, guid: 455873a24876ebd449e29671383e5013, type: 2}
+  weaponItemId: wooden_shield
+  partLabels:
+  - "mesh_0"
+  - "mesh_1"
+  - "mesh_2"
+  boxes:
+  - label: "mesh_0"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 17.0, y: 7.0, z: 7.5}
+    size: {x: 34, y: 15, z: 15}
+    euler: {x: 0, y: 0, z: 0}
+  - label: "mesh_1"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 17.0, y: 21.0, z: 7.5}
+    size: {x: 34, y: 15, z: 15}
+    euler: {x: 0, y: 0, z: 0}
+  - label: "mesh_2"
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 17.0, y: 35.5, z: 7.5}
+    size: {x: 34, y: 16, z: 15}
+    euler: {x: 0, y: 0, z: 0}
+  rejected:
+  - label: "mesh_0"
+    cells: []
+  - label: "mesh_1"
+    cells: []
+  - label: "mesh_2"
+    cells: []
+  claimed:
+  - label: "mesh_0"
+    cells: []
+  - label: "mesh_1"
+    cells: []
+  - label: "mesh_2"
+    cells: []
