@@ -1,18 +1,16 @@
 # TuZhi Voxel Blueprint / 图纸体素工程
 
-Unity **2022.3.30f1c1** editor project. No paid plugins (no Auto Hand, PuppetMaster, PicaVoxel, Final IK).
+Unity **2022.3.30f1c1** editor project. Converts 3D meshes into voxel (pixel-block) blueprints. This repo has **no paid plugins**.
 
-无付费插件。这是体素**图纸编辑**工程，不是完整 VR 对战游戏。
+Unity **2022.3.30f1c1** 编辑器工程。作用是把 **3D 模型转成像素化/体素图纸**。本仓库**不含付费插件**。
 
 ---
 
 ## 功能 / What it does
 
-中文：在 Unity 里编辑可移植的 `VoxelBlueprintAsset`（盔甲、武器等体素图纸）：切片绘制、从可读 Mesh 表面体素化、3D 预览、与 MagicaVoxel `.vox` 互导。可把 `Assets/VoxelBlueprintAuthoring/` 整夹（含 `.meta`）拷到别的 Unity 工程。
+中文：把可读 Mesh（或 MagicaVoxel `.vox`）变成可编辑的 `VoxelBlueprintAsset` 体素网格：表面体素化、切片绘制、3D 预览、导出 `.vox`。可把 `Assets/VoxelBlueprintAuthoring/` 整夹（含 `.meta`）拷到别的 Unity 工程。
 
-English: Edit portable `VoxelBlueprintAsset` grids in Unity (armor, weapons, etc.): slice painting, surface voxelize from a readable mesh, orbit 3D preview, MagicaVoxel `.vox` import/export. Copy the whole `Assets/VoxelBlueprintAuthoring/` folder (including `.meta`) into another Unity project.
-
-不包含 / Not included: VR3 运行时穿戴、战斗、PicaVoxel 生成、Auto Hand、PuppetMaster。
+English: Turn a readable mesh (or MagicaVoxel `.vox`) into an editable `VoxelBlueprintAsset` grid: surface voxelize, slice paint, 3D preview, export `.vox`. Copy the whole `Assets/VoxelBlueprintAuthoring/` folder (including `.meta`) into another Unity project.
 
 ---
 
@@ -24,23 +22,43 @@ English: Edit portable `VoxelBlueprintAsset` grids in Unity (armor, weapons, etc
 3. 创建或选中一个 `VoxelBlueprintAsset`。  
    Create or select a `VoxelBlueprintAsset`.
 4. 常用流程 / Typical flow:
-   - MagicaVoxel 画体素 → **Import .vox Into Blueprint** → 切片微调 → **Export Blueprint As .vox**
-   - 或把可读 Mesh 拖进窗口做表面烘焙 / Or drag a readable `MeshFilter` into the window to bake the surface
-5. 图纸资源在 `Assets/VoxelBlueprints/`。命名与轴向约定见 `Docs/AI/UnitVoxelBlueprintConventions.md`。  
-   Blueprint assets live under `Assets/VoxelBlueprints/`. Naming and axes: `Docs/AI/UnitVoxelBlueprintConventions.md`.
-6. 更细的编辑器说明：`Assets/VoxelBlueprintAuthoring/README.md`。  
-   More editor detail: `Assets/VoxelBlueprintAuthoring/README.md`.
+   - 把可读 Mesh 拖进窗口做表面烘焙 → 切片微调 → 需要时 **Export .vox**  
+     Drag a readable `MeshFilter` in to bake the surface → slice-edit → optionally **Export .vox**
+   - 或 MagicaVoxel → **Import .vox Into Blueprint**
+5. 图纸在 `Assets/VoxelBlueprints/`。约定见 `Docs/AI/UnitVoxelBlueprintConventions.md`。  
+   Assets live under `Assets/VoxelBlueprints/`. Conventions: `Docs/AI/UnitVoxelBlueprintConventions.md`.
+6. 编辑器细节：`Assets/VoxelBlueprintAuthoring/README.md`。
 
-Python 辅助脚本在 `Tools/`（例如体素转低模预览）。不要把第三方 `.exe`（如 Instant Meshes）传进 Git。  
-Python helpers are in `Tools/`. Do not commit third-party binaries such as Instant Meshes.
+---
+
+## 若要实现切割 / If you want cutting
+
+本仓库里的「切割」按钮只是**图纸盒切**：把体素网格拆成部件资产，**不需要商业插件**。
+
+The in-repo **Cut** button is **authoring box-cut** only: split a voxel grid into part assets. **No commercial plugin required.**
+
+若要在 **Play 运行时**用刃口真正切开体素（挖格、掉块、重生成 mesh），需要商业插件：
+
+For **runtime** blade cutting (carve cells, drop chunks, rebuild mesh) you need commercial plugins:
+
+| 需求 / Need | 商业插件 / Paid plugin |
+|---|---|
+| 运行时体素体积、按格破坏与重网格 / Runtime voxel volume, per-cell destroy, remesh | **PicaVoxel**（Asset Store） |
+| 切开后人体按肢体布娃娃 / Ragdoll limbs after a cut | **PuppetMaster**（RootMotion） |
+| 用手抓起切下来的块（可选） / Grab cut pieces by hand (optional) | **Auto Hand** |
+
+运行时切开走的是 PicaVoxel `Volume` + 自研刃扫（如 `HdPicaVoxelBodyPart.TryCutVolume`）。没有 PicaVoxel 就没有这套运行时切割。
+
+Runtime cuts use PicaVoxel `Volume` plus a custom blade sweep (`HdPicaVoxelBodyPart.TryCutVolume`). Without PicaVoxel there is no that runtime cut stack.
+
+本 Git 仓库**不会**包含上述付费插件。
+
+This git repo **does not** ship those paid plugins.
 
 ---
 
 ## 许可注意 / License notes
 
-本仓库**不含**付费 Asset Store 插件，也**不含**许可未核清的第三方模型（例如爱给网装甲、未验证的 AI 人体模型、PicaVoxel 拷贝）。
+不含许可未核清的第三方模型（爱给网装甲、未验证 AI 人体等）。OpenGameArt 等样本见各目录 `SOURCE.md`，使用前请核原许可。
 
-This repo **does not** include paid Asset Store plugins, or third-party meshes whose redistribution rights were not verified (e.g. Aigei armor, unverified AI humanoids, PicaVoxel copies).
-
-OpenGameArt 等已在对应 `SOURCE.md` 记录来源的样本可以参考；使用前请自己核对原许可。  
-Samples that already have a `SOURCE.md` (e.g. OpenGameArt) are for reference; check the original license before reuse.
+Does not include third-party meshes with unverified redistribution rights. Check each `SOURCE.md` (e.g. OpenGameArt) before reuse.
